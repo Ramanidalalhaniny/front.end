@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
-  <title>تحريك الصورة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>move pic</title>
   <style>
-    body{
+    body, html {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -17,38 +19,23 @@
 
     #movingSquare {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      animation: moveSquare 8s infinite linear;
+      width: 200px;
+      height: 200px;
+      animation: moveSquare 4s infinite alternate;
     }
 
     @keyframes moveSquare {
-      0% {
-        top: 0;
-        left: 0;
-      }
-      25% {
-        top: 0;
-        left: calc(100% - 50px);
-      }
-      50% {
+      to {
         top: calc(100vh - 50px);
         left: calc(100% - 50px);
-      }
-      75% {
-        top: calc(100vh - 50px);
-        left: 0;
-      }
-      100% {
-        top: 0;
-        left: 0;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img id="movingSquare" src="rr.jpg" alt="pic">
+    <img id="movingSquare" src="flower.jpg"   alt="pic">
   </div>
 </body>
 </html>
+
