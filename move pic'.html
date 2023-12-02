@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>تحريك الصورة</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #movingSquare {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      animation: moveSquare 8s infinite linear;
+    }
+
+    @keyframes moveSquare {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: calc(100% - 50px);
+      }
+      50% {
+        top: calc(100vh - 50px);
+        left: calc(100% - 50px);
+      }
+      75% {
+        top: calc(100vh - 50px);
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="movingSquare" src="rr.jpg" alt="pic">
+  </div>
+</body>
+</html>
