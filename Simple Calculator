@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: rgb(212, 212, 241);
+        }
+        #calculator {
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #464343;
+            border-radius: 10px;
+            background-color: rgb(228, 228, 228);
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button.operator {
+            background-color: #f8f8f8;
+        }
+        .button_d {
+            display: flex;
+        }
+        h1{
+            color: rgb(255, 255, 255);
+            text-align: center; 
+            margin-top: 50px;
+             margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <div id="calculator">
+        <input type="text" id="display" readonly>
+        <br>
+        <div class="button_d">
+            <button class="operator" onclick="addToDisplay('(')">(</button>
+            <button class="operator" onclick="addToDisplay(')')">)</button>
+            <button class="operator" onclick="addToDisplay('%')">%</button>
+            <button class="operator" onclick="clearDisplay()">AC</button>
+        </div>
+        <div class="button_d">
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button class="operator" onclick="addToDisplay('/')">/</button>
+        </div>
+        <div class="button_d">
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button class="operator" onclick="addToDisplay('*')">*</button>
+        </div>
+        <div class="button_d">
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button class="operator" onclick="addToDisplay('-')">-</button>
+        </div>
+        <div class="button_d">
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button class="operator" onclick="calculate()">=</button>
+            <button class="operator" onclick="addToDisplay('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculate() {
+            var expression = document.getElementById("display").value;
+            var result = eval(expression);
+            document.getElementById("display").value = result;
+        }
+    </script>
+</body>
+</html>
